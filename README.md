@@ -46,6 +46,12 @@ You may run `gleam run --module check_maybe_div_by_zero` which returns `exit(0)`
 if no potential division by zero is found, and `exit(1)` if a potential division
 by zero is found. It should thus stop the CI in case a divison by zero is found.
 
+## Targets
+
+- Erlang
+- NodeJS
+- Deno
+
 ## Development
 
 ```sh
