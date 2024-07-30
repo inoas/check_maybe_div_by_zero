@@ -1,0 +1,16 @@
+name = "check_maybe_div_by_zero"
+version = "1.0.0"
+
+description = "Checks gleam source code for potential division by zero in a hacky way :D"
+licences = ["Apache-2.0"]
+repository = { type = "github", user = "inoas", repo = "check_maybe_div_by_zero" }
+
+[dependencies]
+gleam_stdlib = ">= 0.34.0 and < 2.0.0"
+glance = ">= 0.11.0 and < 1.0.0"
+simplifile = ">= 1.7.0 and < 2.0.0"
+argv = ">= 1.0.2 and < 2.0.0"
+
+[dev-dependencies]
+gleeunit = ">= 1.0.0 and < 2.0.0"
+pprint = ">= 1.0.3 and < 2.0.0"
