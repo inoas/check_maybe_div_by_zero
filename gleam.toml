@@ -1,5 +1,5 @@
 name = "check_maybe_div_by_zero"
-version = "1.0.0"
+version = "1.0.1"
 
 description = "Checks gleam source code for potential division by zero in a hacky way :D"
 licences = ["Apache-2.0"]
