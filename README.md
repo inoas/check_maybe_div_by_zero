@@ -46,6 +46,25 @@ You may run `gleam run --module check_maybe_div_by_zero` which returns `exit(0)`
 if no potential division by zero is found, and `exit(1)` if a potential division
 by zero is found. It should thus stop the CI in case a divison by zero is found.
 
+```
+jobs:
+  test-and-no-div-zero:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: erlef/setup-beam@v1
+        with:
+          otp-version: "27.0.1"
+          gleam-version: "1.3.2"
+          rebar3-version: "3"
+      - run: gleam deps download
+      - run: gleam format --check src test
+      - run: gleam test
+      - run: gleam run --module check_maybe_div_by_zero -- src
+      - run: gleam test --target javascript
+      - run: gleam run --module check_maybe_div_by_zero --target javascript -- src
+```
+
 ## Targets
 
 - Erlang
