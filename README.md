@@ -3,8 +3,13 @@
 [![Package Version](https://img.shields.io/hexpm/v/check_maybe_div_by_zero)](https://hex.pm/packages/check_maybe_div_by_zero)
 [![Hex Docs](https://img.shields.io/badge/hex-docs-ffaff3)](https://hexdocs.pm/check_maybe_div_by_zero/)
 
-Gleam does not crash on division by zero, see following explanations why and
-what happens:
+Gleam does not crash on division by zero.
+
+In effect any literal division by zero in gleam returns a zero. You may opt to
+use the stdlib's `int.divide`, `int.modulo`, `int.remainder`, `float.divide` and
+`float.modulo` to catch errors instead of assmuing 0.
+
+See following explanations why and what happens:
 - <https://tutorial.ponylang.io/gotchas/divide-by-zero.html>
 - <https://www.hillelwayne.com/post/divide-by-zero/>
 
