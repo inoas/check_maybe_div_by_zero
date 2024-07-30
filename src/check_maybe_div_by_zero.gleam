@@ -4,7 +4,6 @@ import gleam/list
 import gleam/string
 import simplifile
 import argv
-import pprint
 
 pub fn main() -> Nil {
   case argv.load().arguments {
