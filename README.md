@@ -13,13 +13,24 @@ See following explanations why and what happens:
 - <https://tutorial.ponylang.io/gotchas/divide-by-zero.html>
 - <https://www.hillelwayne.com/post/divide-by-zero/>
 
-# Installation
+## What does this do
+
+This helper checks gleam code for potential(!) literal division by zero.
+It may be 100% fine to run `1 / a` if you know that `a` is never zero.
+It may also be fine to run `1 / a` where `a` equals `0` depending on your
+requirements.
+
+This checker is for when this is not fine. It allows you to check a code
+repository for POTENTIAL literal divison by zero in gleam-land (it does NOT
+check Erlang or JS FFI).
+
+## Installation
 
 ```sh
 gleam add check_maybe_div_by_zero@1
 ```
 
-# Usage
+## Usage
 
 ```sh
 gleam run --module check_maybe_div_by_zero
