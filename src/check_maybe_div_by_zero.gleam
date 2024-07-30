@@ -1,16 +1,14 @@
+import argv
 import glance
 import gleam/io
 import gleam/list
 import gleam/string
 import simplifile
-import argv
 
 pub fn main() -> Nil {
   case argv.load().arguments {
-    [path] ->
-      run(in: path)
-    _ ->
-      run(in: "src")
+    [path] -> run(in: path)
+    _ -> run(in: "src")
   }
 }
 
@@ -33,7 +31,8 @@ pub fn mods_with_literal_div(in src_dir: String) -> Int {
 
   case mods_with_literal_div != [] {
     True -> {
-      "Warning: Detected potential division by zero in modules:" |> io.println_error
+      "Warning: Detected potential division by zero in modules:"
+      |> io.println_error
 
       mods_with_literal_div
       |> string.join("\n")

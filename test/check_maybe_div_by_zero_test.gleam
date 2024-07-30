@@ -1,6 +1,6 @@
+import check_maybe_div_by_zero
 import gleeunit
 import gleeunit/should
-import check_maybe_div_by_zero
 
 pub fn main() {
   gleeunit.main()
