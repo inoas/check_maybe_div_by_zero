@@ -1,28 +1,40 @@
-# Check Maybe Div By Zero for Gleam
+# ➗0️⃣❓ Check Maybe Div By Zero for Gleam
 
-[![Package Version](https://img.shields.io/hexpm/v/check_maybe_div_by_zero)](https://hex.pm/packages/check_maybe_div_by_zero)
-[![Hex Docs](https://img.shields.io/badge/hex-docs-ffaff3)](https://hexdocs.pm/check_maybe_div_by_zero/)
+[![Package <a href="https://github.com/inoas/check_maybe_div_by_zero/releases"><img src="https://img.shields.io/github/release/inoas/check_maybe_div_by_zero" alt="GitHub release"></a> Version](https://img.shields.io/hexpm/v/gond)](https://hex.pm/packages/gond)
+[![Erlang-compatible](https://img.shields.io/badge/target-erlang-b83998)](https://www.erlang.org/)
+[![JavaScript Compatible](https://img.shields.io/badge/target-javascript-f3e155)](https://en.wikipedia.org/wiki/JavaScript)
+[![Hex Docs](https://img.shields.io/badge/hex-docs-ffaff3)](https://hexdocs.pm/gond/)
+[![Discord](https://img.shields.io/discord/768594524158427167?label=discord%20chat&amp;color=5865F2)](https://discord.gg/Fm8Pwmy)
 
-Gleam does not crash on division by zero.
+**Gleam does not crash on division by zero.**
 
-In effect any literal division by zero in gleam returns a zero. You may opt to
-use the stdlib's `int.divide`, `int.modulo`, `int.remainder`, `float.divide` and
-`float.modulo` to catch errors instead of assmuing 0.
+In effect any literal division by zero in Gleam returns a `0`. You may opt to
+use Gleam stdlib's `int.divide`, `int.modulo`, `int.remainder`, `float.divide`
+and `float.modulo` to catch errors instead of assuming `0`.
 
 See following explanations why and what happens:
+
 - <https://tutorial.ponylang.io/gotchas/divide-by-zero.html>
 - <https://www.hillelwayne.com/post/divide-by-zero/>
 
-## What does this do
+## What does this utility do
 
-This helper checks gleam code for potential(!) literal division by zero.
-It may be 100% fine to run `1 / a` if you know that `a` is never zero.
-It may also be fine to run `1 / a` where `a` equals `0` depending on your
-requirements.
+This helper checks Gleam code for potential(!) literal division by zero.
 
-This checker is for when this is not fine. It allows you to check a code
-repository for POTENTIAL literal divison by zero in gleam-land (it does NOT
+1. It may be 100% fine to run `1 / a` if you know that `a` is never zero.
+2. It may also be fine to run `1 / a` where `a` equals `0` depending on your
+logical requirements.
+3. This checker is for when this is not fine. It allows you to check a code
+repository for POTENTIAL literal division by zero in Gleam-land (it does NOT
 check Erlang or JS FFI).
+
+### Caveats
+
+- No checks in Erlang, Elixir, JavaScript, or TypeScript FFI-land.
+- This checker may detect false positives where your business code makes certain
+for variable divisors to not be binding to zero.
+- It also, so far, does not replace divisor constants but assumes that they are
+  variables. PRs are welcome.
 
 ## Installation
 
@@ -30,7 +42,9 @@ check Erlang or JS FFI).
 gleam add check_maybe_div_by_zero@1
 ```
 
-## Usage
+## Local usage
+
+It is recommended to add this checker to your CI.
 
 ```sh
 gleam run --module check_maybe_div_by_zero
@@ -44,9 +58,9 @@ Further documentation can be found at <https://hexdocs.pm/check_maybe_div_by_zer
 
 You may run `gleam run --module check_maybe_div_by_zero` which returns `exit(0)`
 if no potential division by zero is found, and `exit(1)` if a potential division
-by zero is found. It should thus stop the CI in case a divison by zero is found.
+by zero is found. It should thus stop the CI in case a division by zero is found.
 
-```
+```yaml
 jobs:
   test-and-no-div-zero:
     runs-on: ubuntu-latest
@@ -54,8 +68,8 @@ jobs:
       - uses: actions/checkout@v4
       - uses: erlef/setup-beam@v1
         with:
-          otp-version: "27.0.1"
-          gleam-version: "1.3.2"
+          otp-version: "28.5"
+          gleam-version: "1.16.0"
           rebar3-version: "3"
       - run: gleam deps download
       - run: gleam format --check src test
@@ -68,11 +82,11 @@ jobs:
 ## Targets
 
 - Erlang
-- NodeJS
-- Deno
+- NodeJS / Deno / Bun / etc.
 
 ## Development
 
 ```sh
-gleam test  # Run the tests
+gleam test # Run the tests on Erlang
+gleam test --target javascript # Run the tests on JavaScript
 ```
