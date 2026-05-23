@@ -1,10 +1,16 @@
 # ➗0️⃣❓ Check Maybe Div By Zero for Gleam
 
-[![Package <a href="https://github.com/inoas/check_maybe_div_by_zero/releases"><img src="https://img.shields.io/github/release/inoas/check_maybe_div_by_zero" alt="GitHub release"></a> Version](https://img.shields.io/hexpm/v/gond)](https://hex.pm/packages/gond)
+[![Downloads](https://img.shields.io/hexpm/dt/check_maybe_div_by_zero)](https://hex.pm/packages/check_maybe_div_by_zero)
 [![Erlang-compatible](https://img.shields.io/badge/target-erlang-b83998)](https://www.erlang.org/)
 [![JavaScript Compatible](https://img.shields.io/badge/target-javascript-f3e155)](https://en.wikipedia.org/wiki/JavaScript)
-[![Hex Docs](https://img.shields.io/badge/hex-docs-ffaff3)](https://hexdocs.pm/gond/)
+[![Hex Docs](https://img.shields.io/badge/hex-docs-ffaff3)](https://hexdocs.pm/check_maybe_div_by_zero/)
+[![Package <a href="https://github.com/inoas/check_maybe_div_by_zero/releases"><img src="https://img.shields.io/github/release/inoas/check_maybe_div_by_zero" alt="GitHub release"></a> Version](https://img.shields.io/hexpm/v/check_maybe_div_by_zero)](https://hex.pm/packages/check_maybe_div_by_zero)
+[![CI Test](https://github.com/inoas/check_maybe_div_by_zero/actions/workflows/test.yml/badge.svg?branch=main&amp;event=push)](https://github.com/inoas/check_maybe_div_by_zero/actions/workflows/test.yml)
+[![License](https://img.shields.io/hexpm/l/check_maybe_div_by_zero)](https://github.com/inoas/check_maybe_div_by_zero/blob/main/LICENCE)
 [![Discord](https://img.shields.io/discord/768594524158427167?label=discord%20chat&amp;color=5865F2)](https://discord.gg/Fm8Pwmy)
+
+<br>
+<br>
 
 **Gleam does not crash on division by zero.**
 

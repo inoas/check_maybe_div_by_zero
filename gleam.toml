@@ -4,6 +4,8 @@ description = "➗0️⃣❓Check gleam source code for potential division by ze
 licences = ["MPL-2.0"]
 repository = { type = "github", user = "inoas", repo = "check_maybe_div_by_zero" }
 
+gleam
+
 [documentation]
 pages = [
   { title = "CHANGELOG", path = "changelog.html", source = "CHANGELOG.md" },
@@ -11,9 +13,9 @@ pages = [
 ]
 
 [dependencies]
-gleam_stdlib = ">= 0.71.0 and < 2.0.0"
-glance = ">= 0.11.0 and < 7.0.0"
 argv = ">= 1.0.2 and < 2.0.0"
+glance = ">= 0.11.0 and < 7.0.0"
+gleam_stdlib = ">= 0.71.0 and < 2.0.0"
 simplifile = ">= 2.0.1 and < 3.0.0"
 
 [dev-dependencies]
