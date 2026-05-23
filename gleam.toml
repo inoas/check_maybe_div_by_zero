@@ -4,7 +4,7 @@ description = "➗0️⃣❓Check gleam source code for potential division by ze
 licences = ["MPL-2.0"]
 repository = { type = "github", user = "inoas", repo = "check_maybe_div_by_zero" }
 
-gleam
+gleam = ">= 1.15.0"
 
 [documentation]
 pages = [
