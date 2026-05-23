@@ -10,7 +10,6 @@
 [![Discord](https://img.shields.io/discord/768594524158427167?label=discord%20chat&amp;color=5865F2)](https://discord.gg/Fm8Pwmy)
 
 <br>
-<br>
 
 **Gleam does not crash on division by zero.**
 
